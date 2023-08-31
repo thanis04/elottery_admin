@@ -1,0 +1,20 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 26, 2017, 10:35:53 AM
+    Author     : kasun_n
+*/
+
+.error-indicate {
+    border-color: rgba(229, 103, 23, 0.8) !important ;
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset, 0 0 8px rgba(229, 103, 23, 0.6);
+    outline: 0 none ;   
+}
+
+.required-symbol{
+   color: red;
+   font-size: 12pt;
+}

@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="winning_tickets_report" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="30e80f76-8124-4bda-9f19-0ac0d66f8f4e">
+	<property name="ireport.zoom" value="0.9090909090909091"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="total" class="java.lang.String"/>
+	<parameter name="fileNo" class="java.lang.String"/>
+	<parameter name="lotteryType" class="java.lang.String"/>
+	<parameter name="drawDate" class="java.lang.String"/>
+	<parameter name="drawNo" class="java.lang.String"/>
+	<parameter name="logo" class="java.lang.String"/>
+	<field name="serialNumber" class="java.lang.String"/>
+	<field name="lotteryNumbers" class="java.lang.String"/>
+	<field name="winingPrize" class="java.lang.String"/>
+	<field name="mobileNo" class="java.lang.String"/>
+	<field name="nic" class="java.lang.String"/>
+	<variable name="no" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$V{no}+1]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="276" y="13" width="289" height="26" uuid="f6c6d9b5-884c-4e32-9ded-b0fec7b4a650"/>
+				<textElement textAlignment="Center">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[e-Lottery Sales & Distribution Solution]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="309" y="39" width="223" height="26" uuid="75cd6eaf-641e-4d3a-8730-e0be7f0c888d"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Winning Ticket Report]]></text>
+			</staticText>
+			<image>
+				<reportElement x="14" y="13" width="100" height="50" uuid="be78dc43-44c9-443c-8470-b3f753ca631f"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="74" splitType="Stretch">
+			<staticText>
+				<reportElement x="14" y="11" width="62" height="20" uuid="8430ef33-87f0-4725-a31e-4dc37fa505b1"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[File No   :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="179" y="11" width="87" height="20" uuid="748dafdc-db72-48cc-b746-06bfb475820e"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Lottery Type: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="558" y="11" width="62" height="20" uuid="dd0a7105-394d-4515-bb59-0c932b099f28"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Draw No:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="383" y="11" width="72" height="20" uuid="3c27562e-3dfa-436b-8e3a-3548210c54c6"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Draw Date:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="76" y="11" width="85" height="20" uuid="8b22a811-f0cf-4412-bbb7-d0b8725a34e0"/>
+				<box>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="0.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="0.0" lineStyle="Dotted"/>
+				</box>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fileNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="266" y="11" width="100" height="20" uuid="aaa0f39c-7043-487f-9e48-fc8849a6a903"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{lotteryType}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="11" width="90" height="20" uuid="f68dcfa4-2f12-469b-bef2-1218338f44e6"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{drawDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="620" y="11" width="85" height="20" uuid="409157b7-d480-4c4b-bb4b-9ca7b0a42554"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{drawNo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="29" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="802" height="29" forecolor="#000000" backcolor="#CCCCFF" uuid="69c8fc40-6a3d-4e9a-8169-4d158a5ce41e"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="14" y="0" width="52" height="29" uuid="76ff3feb-4c12-474d-8225-804578ace343"/>
+				<box>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="0.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="0.75" lineStyle="Dotted"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="76" y="0" width="103" height="29" uuid="018b31c3-5f4b-43d1-a7b2-9854f3669938"/>
+				<box>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="0.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="0.75" lineStyle="Dotted"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Serial No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="0" width="193" height="29" uuid="753a9bf0-03ab-4747-a745-0b347f674f0d"/>
+				<box>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="0.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="0.75" lineStyle="Dotted"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Numbers]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="393" y="0" width="114" height="29" uuid="9545c7fb-36e5-4d53-aab3-4e87a9ac3c12"/>
+				<box>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="0.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="0.75" lineStyle="Dotted"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="517" y="0" width="125" height="29" uuid="8eaa4ac4-d0ed-47ae-884a-336ea0cdc01a"/>
+				<box>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="0.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="0.75" lineStyle="Dotted"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mobile No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="652" y="0" width="150" height="29" uuid="3190a5b3-df2d-45fc-8b78-7fd8cf9006d8"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NIC]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="29" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="802" height="29" backcolor="#EEEDED" uuid="fbe8fb4c-6e1d-4e92-bb53-c79f0b2343e3"/>
+			</rectangle>
+			<textField isBlankWhenNull="false">
+				<reportElement x="14" y="0" width="52" height="29" uuid="6d30fdc9-4695-4712-8be4-bf9d8676c545"/>
+				<box>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="0.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="0.75" lineStyle="Dotted"/>
+				</box>
+				<textFieldExpression><![CDATA[$V{no}+1]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="76" y="0" width="103" height="29" uuid="fecd8fd7-e228-4354-886e-24946db9ad4e"/>
+				<box>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="0.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="0.75" lineStyle="Dotted"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{serialNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="0" width="193" height="29" uuid="3864aa83-18d6-4055-907b-f77ce86cf4e8"/>
+				<box>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="0.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="0.75" lineStyle="Dotted"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{lotteryNumbers}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="393" y="0" width="114" height="29" uuid="1eeb36ac-12c7-40b9-999e-2a53e31dbcec"/>
+				<box>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="0.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="0.75" lineStyle="Dotted"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{winingPrize}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="517" y="0" width="125" height="29" uuid="86453056-e6e6-4005-970d-db3b6841bfbf"/>
+				<box>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="0.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="0.75" lineStyle="Dotted"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{mobileNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="652" y="0" width="150" height="29" uuid="7e71c518-a416-42b5-bb2e-bcc3953eed9b"/>
+				<textFieldExpression><![CDATA[$F{nic}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="44" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

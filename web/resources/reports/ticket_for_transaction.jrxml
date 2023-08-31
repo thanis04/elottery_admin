@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ticket_for_transaction" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="978e85eb-a606-421f-844b-2852d3b0ada8">
+	<property name="ireport.zoom" value="1.0000000000000004"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="transaction_id" class="java.lang.String"/>
+	<parameter name="purchase_date" class="java.lang.String"/>
+	<parameter name="name" class="java.lang.String"/>
+	<parameter name="nic" class="java.lang.String"/>
+	<parameter name="total" class="java.lang.String"/>
+	<parameter name="logo" class="java.lang.String"/>
+	<field name="serialNo" class="java.lang.String"/>
+	<field name="lotteryNumbers" class="java.lang.String"/>
+	<field name="winningPrize" class="java.lang.String"/>
+	<variable name="no" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$V{no}+1]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="84" splitType="Stretch">
+			<staticText>
+				<reportElement x="175" y="42" width="223" height="26" uuid="38aa5332-50fb-42da-9171-db8dffe30434"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ticket For Transaction]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="142" y="16" width="289" height="26" uuid="9a287caa-267c-48b1-9791-fe3d15964345"/>
+				<textElement textAlignment="Center">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[e-Lottery Sales & Distribution Solution]]></text>
+			</staticText>
+			<image>
+				<reportElement x="11" y="16" width="102" height="50" uuid="6018b89a-ad1a-4102-8ee6-d7872b76e505"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="102" splitType="Stretch">
+			<staticText>
+				<reportElement x="11" y="19" width="82" height="20" uuid="8e5f7701-1c9b-4533-9dae-ecd8cdf6a5dd"/>
+				<textElement>
+					<font size="11" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Transaction ID:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="216" y="19" width="82" height="20" uuid="b6f39db4-c742-4f5d-a5c1-52bd30fe05d9"/>
+				<textElement>
+					<font size="11" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Purchase Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="65" width="53" height="20" uuid="0038d415-0cdc-478d-b8b3-0a9172ed3173"/>
+				<textElement>
+					<font size="11" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Name:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="201" y="65" width="41" height="20" uuid="0e07326e-2a8e-4945-9401-a2b9c149e64a"/>
+				<textElement>
+					<font size="11" isBold="false"/>
+				</textElement>
+				<text><![CDATA[NIC:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="93" y="19" width="100" height="20" uuid="94ff7786-9f17-437a-9036-ea9ab96040df"/>
+				<textElement textAlignment="Justified">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{transaction_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="298" y="19" width="100" height="20" uuid="3c79b120-8ae2-49b0-afd6-d2b6ed5b428f"/>
+				<textElement textAlignment="Justified">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{purchase_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="64" y="65" width="129" height="20" uuid="5432425f-02e1-4f8c-b92b-3113ae964a05"/>
+				<textElement textAlignment="Justified">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="242" y="65" width="127" height="20" uuid="311ad302-8a3e-42fa-bc42-af49969ad9b2"/>
+				<textElement textAlignment="Justified">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nic}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="398" y="65" width="33" height="20" uuid="39ecfea0-ce5a-4f6f-8859-e5474af8bcdb"/>
+				<textElement>
+					<font size="11" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Total:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="431" y="65" width="100" height="20" uuid="1187f31e-aad5-4160-b795-b6dac04240bb"/>
+				<textElement textAlignment="Justified">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="30" backcolor="#CCCCFF" uuid="0fc65769-3b50-4802-b549-83bc230c13cc"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="11" y="0" width="42" height="30" uuid="e7027eaa-c13f-4e8f-ad42-1d3609ffc7d7"/>
+				<box rightPadding="0">
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="0.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="0.75" lineStyle="Dotted"/>
+				</box>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="64" y="1" width="137" height="29" uuid="9b0c5cf7-98fe-4851-8a8b-cad41437bb3c"/>
+				<box rightPadding="0">
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="0.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="0.75" lineStyle="Dotted"/>
+				</box>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Serial No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="211" y="1" width="187" height="29" uuid="73b52ad4-71a7-4d61-b5f5-cd82a233272c"/>
+				<box rightPadding="0">
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="0.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="0.75" lineStyle="Dotted"/>
+				</box>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Numbers]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="408" y="1" width="147" height="29" uuid="1df4fdea-da31-47b1-a726-df31831c690f"/>
+				<box rightPadding="0">
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="0.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="0.75" lineStyle="Dotted"/>
+				</box>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Price]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="28" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="28" backcolor="#EEEDED" uuid="52f4a9d8-74e7-469e-939e-f6ac09697c1c"/>
+			</rectangle>
+			<textField isBlankWhenNull="false">
+				<reportElement x="11" y="0" width="42" height="28" uuid="645e47ad-70b4-4c16-84c4-f4f2d7c8b636"/>
+				<box rightPadding="0">
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="0.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="0.75" lineStyle="Dotted"/>
+				</box>
+				<textFieldExpression><![CDATA[$V{no}+1]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="64" y="0" width="137" height="28" uuid="ce2fc402-4a8d-42d0-8cda-be4d31f43ad3"/>
+				<box rightPadding="0">
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="0.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="0.75" lineStyle="Dotted"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{serialNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="211" y="0" width="187" height="28" uuid="119ca19f-8941-418c-87d9-6be90e07c08e"/>
+				<box rightPadding="0">
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="0.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="0.75" lineStyle="Dotted"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lotteryNumbers}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="408" y="0" width="147" height="28" uuid="24e459ec-2e19-49b7-b1ed-2fee7f7fa639"/>
+				<box rightPadding="0">
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="0.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="0.75" lineStyle="Dotted"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{winningPrize}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="47" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

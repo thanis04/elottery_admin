@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ticket_purchase_report" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5bbac780-055f-46a6-a712-ed20165d2e2c">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="logo" class="java.lang.String"/>
+	<parameter name="from_date" class="java.lang.String"/>
+	<parameter name="to_date" class="java.lang.String"/>
+	<parameter name="total" class="java.lang.String"/>
+	<parameter name="category" class="java.lang.String"/>
+	<field name="serialNumber" class="java.lang.String"/>
+	<field name="createdDate" class="java.lang.String"/>
+	<field name="drawNo" class="java.lang.String"/>
+	<field name="drawDate" class="java.lang.String"/>
+	<field name="productDescription" class="java.lang.String"/>
+	<variable name="no" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$V{no}+1]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="100" splitType="Stretch">
+			<staticText>
+				<reportElement x="189" y="57" width="223" height="26" uuid="2c14c01f-8b6a-43b0-81f2-ec7592241b6d"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ticket Return Report]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="132" y="31" width="337" height="26" uuid="f7e6dba3-542e-4849-b070-64d706063d36"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[e-Lottery Sales & Distribution Solution]]></text>
+			</staticText>
+			<image>
+				<reportElement x="1" y="9" width="109" height="48" uuid="5487b945-0db7-46ce-a723-7db984e3d9d3"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="78" splitType="Stretch">
+			<staticText>
+				<reportElement x="11" y="11" width="68" height="20" uuid="cea65884-d4d0-4221-9c8b-99d8843479e5"/>
+				<textElement>
+					<font size="13" isBold="false"/>
+				</textElement>
+				<text><![CDATA[From Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="189" y="11" width="50" height="20" uuid="787e7fb0-c6a9-428a-abb5-916b383770cc"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[To Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="367" y="11" width="81" height="20" uuid="c2937c30-4049-46b0-ac4c-1b11a3d348bb"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Total Tickets:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="79" y="11" width="100" height="20" uuid="15482e7c-66dd-4d96-85bd-f5ad98442aed"/>
+				<textFieldExpression><![CDATA[$P{from_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="239" y="11" width="100" height="20" uuid="7715eeb8-d3a4-42be-9d66-d884a66fd319"/>
+				<textFieldExpression><![CDATA[$P{to_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="448" y="11" width="100" height="20" uuid="530ed032-6d5c-4880-ae55-196576fa5039"/>
+				<textFieldExpression><![CDATA[$P{total}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="42" width="68" height="20" uuid="3229809f-e004-4d29-8d6c-09743de8aa85"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Return]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="1" width="555" height="20" forecolor="#FFFFFF" backcolor="#CCCCFF" uuid="b7cacfc4-04b5-4c67-b5bc-65bf0de6b596"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="49" height="21" uuid="dce82963-7434-4ca1-8b9d-49da938baf9f"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="49" y="0" width="105" height="21" uuid="09bb64ee-9601-47bb-b8f4-22088aa0c418"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[From Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="154" y="0" width="105" height="21" uuid="2eb41f47-8c14-4330-8819-f1179f5f5fdd"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Serial No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="259" y="0" width="105" height="21" uuid="cad99d51-8a43-4f2b-987e-eaf69d8e8508"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lottery]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="364" y="0" width="105" height="21" uuid="7b93c9f8-2139-4d8e-b1ce-e7ca6ff13289"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Draw Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="469" y="0" width="86" height="21" uuid="34c73e9e-8ea8-4551-99e2-26a2d2b86b23"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Draw No]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="20" backcolor="#EEEDED" uuid="cbf89afc-c9fb-4a17-bd4e-0ab80e3f321f"/>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="0" width="49" height="20" uuid="0b18bf3f-8368-4016-931f-adbb6829668f"/>
+				<textFieldExpression><![CDATA[$V{no}+1]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="49" y="0" width="105" height="20" uuid="0db86a98-cca5-44ec-bd41-8f21a8429fb0"/>
+				<textFieldExpression><![CDATA[$F{createdDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="154" y="0" width="105" height="20" uuid="0fcaf038-559d-45d6-b8cf-4b3726153d07"/>
+				<textFieldExpression><![CDATA[$F{serialNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="364" y="0" width="105" height="20" uuid="01042b81-6ec0-4033-823d-85b092d020e9"/>
+				<textFieldExpression><![CDATA[$F{drawDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="469" y="0" width="86" height="20" uuid="b398aa86-7bfd-4e5c-838a-5fd476157bd0"/>
+				<textFieldExpression><![CDATA[$F{drawNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="259" y="0" width="105" height="20" uuid="dc76fa4e-3103-4e4a-9a86-be46dd0b562c"/>
+				<textFieldExpression><![CDATA[$F{productDescription}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="32" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

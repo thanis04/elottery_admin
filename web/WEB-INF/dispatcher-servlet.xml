@@ -1,0 +1,226 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!-- was: <?xml version="1.0" encoding="UTF-8"?> -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-3.0.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+       http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+
+    <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
+
+    <!--
+    Most controllers will use the ControllerClassNameHandlerMapping above, but
+    for the index controller we are using ParameterizableViewController, so we must
+    define an explicit mapping for it.
+    -->
+
+    <!--Spring converters-->
+    <mvc:annotation-driven conversion-service="conversion-servic"/>
+    <bean id="conversion-servic" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <list>
+                <bean class="com.epic.dlb.support.DateConvertor"/>
+                <bean class="com.epic.dlb.support.DateTimeConvertor"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/view/"
+          p:suffix=".jsp" />
+
+    <!--context sacnner-->
+    <context:annotation-config/>
+    <context:component-scan base-package="com.epic.dlb"/>
+
+    <!--Resourse folder-->
+    <mvc:resources mapping="/resources/**" location="/resources"/>  
+    <mvc:annotation-driven/>
+
+    <!--Spring File upload Resolver -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="1000000000"/>
+    </bean>
+
+    <!--Every Day At 3.57pm-->
+    <task:scheduled-tasks scheduler="eodScheduler">
+        <task:scheduled ref="eODService" method="runTasks" cron="0 57 23 * * *"/>
+    </task:scheduled-tasks>
+    
+    <!--    <task:scheduled-tasks scheduler="eodScheduler">
+        <task:scheduled ref="eODService" method="runTasks" cron="0 40 13 * * *"/>
+    </task:scheduled-tasks>-->
+ 
+    <task:scheduler id="eodScheduler"/>
+
+    <!--     Database Information 
+    -->
+    <!--    
+    -->
+
+    <!--localhost_db___________________________________________________________________________ -->
+    <!--    <bean id="dataSource"
+    class="org.springframework.jdbc.datasource.DriverManagerDataSource"  
+    p:driverClassName="com.mysql.jdbc.Driver"
+    p:url="jdbc:mysql://localhost:3306/elottery_test"    
+    p:username="root" 
+    p:password="1234" />-->
+    <!--localhost_db____________________________________________________________________________ -->
+          
+  
+    <!--live dep_________________________________________________________________________________-->
+    
+    <!--    <bean id="dataSource"
+    class="org.springframework.jdbc.datasource.DriverManagerDataSource" 
+    p:driverClassName="com.mysql.jdbc.Driver"
+    p:url="jdbc:mysql://192.168.20.11:3306/elottery"    
+    p:username="root" 
+    p:password="EnpzB5UB]Z84,`-+" /> -->
+    
+    <!--live dep_________________________________________________________________________________-->
+
+    <!--uat______________________________________________________________________________________-->
+    <bean id="dataSource"
+              class="org.springframework.jdbc.datasource.DriverManagerDataSource" 
+              p:driverClassName="com.mysql.jdbc.Driver"
+              p:url="jdbc:mysql://119.13.109.9:55306/elottery_test"    
+              p:username="rashika" 
+              p:password="Ras#@321" />    
+                      
+    <!--    <bean id="dataSource"
+    class="org.springframework.jdbc.datasource.DriverManagerDataSource" 
+    p:driverClassName="com.mysql.jdbc.Driver"
+    p:url="jdbc:mysql://localhost:55306/elottery_test"    
+    p:username="root" 
+    p:password="Ep1klanka@321" />   -->
+    
+    <!--uat_________________________________________________________________________________________--> 
+               
+    <!--203.81.99.195
+    192.168.40.10  -->
+
+    <!--Database Information JNDI Name: DLB_JNDI--> 
+    <!--
+    -->    
+    <!--  <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean" >
+        <property name="jndiName" value="DLB_JNDI"/>
+        <property name="lookupOnStartup" value="false"/>
+        <property name="cache" value="true"/>
+        <property name="proxyInterface" value="javax.sql.DataSource"/>
+    </bean>-->
+
+    <!-- SessionFactory Bean -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"
+          destroy-method="destroy">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="annotatedClasses">
+            <list>
+                <value>com.epic.dlb.model.DlbWbSymbol </value>
+                <value>com.epic.dlb.model.DlbSwtMtMessageTemplateType </value>
+                <value>com.epic.dlb.model.DlbSwtStWalletHistory </value>
+                <value>com.epic.dlb.model.DlbWbWeekDay </value>
+                <value>com.epic.dlb.model.DlbWbResult </value>
+                <value>com.epic.dlb.model.DlbSwtStServiceCharge </value>
+                <value>com.epic.dlb.model.DlbWbResultDetails </value>
+                <value>com.epic.dlb.model.DlbWbRiskProfile </value>
+                <value>com.epic.dlb.model.DlbStatusCategory </value>
+                <value>com.epic.dlb.model.DlbWbPromotion </value>
+                <value>com.epic.dlb.model.DlbSwtMtTxnType </value>
+                <value>com.epic.dlb.model.DlbWbSystemPriviledge </value>
+                <value>com.epic.dlb.model.DlbWbProductProfileDetails </value>
+                <value>com.epic.dlb.model.DlbSwtMtConfiguration </value>
+                <value>com.epic.dlb.model.DlbSwtStTransaction </value>
+                <value>com.epic.dlb.model.DlbSwtMtResponseCode </value>
+                <value>com.epic.dlb.model.DlbSwtStPurchaseHistory </value>
+                <value>com.epic.dlb.model.DlbWbUserRole </value>
+                <value>com.epic.dlb.model.DlbSwtStMessageTemplate </value>
+                <value>com.epic.dlb.model.DlbWbWiningFileApprovalHistory </value>   
+                <value>com.epic.dlb.model.DlbSwtStWallet </value>
+                <value>com.epic.dlb.model.DlbWbWiningFileErrorDetails </value>
+                <value>com.epic.dlb.model.DlbSwtMtChannelType </value>
+                <value>com.epic.dlb.model.DlbWbUserPriviledge </value>
+                <value>com.epic.dlb.model.DlbWbMainDrawPrizeCodeId </value>
+                <value>com.epic.dlb.model.DlbSwtStTransactionHistory </value>
+                <value>com.epic.dlb.model.DlbWbTicketFile </value>
+                <value>com.epic.dlb.model.DlbWbSectionPriviledgeId </value>
+                <value>com.epic.dlb.model.DlbWbSubSection </value> 
+                <value>com.epic.dlb.model.DlbWbUserPriviledgeId </value>
+                <value>com.epic.dlb.model.DlbWbWiningFileHistory </value>
+                <value>com.epic.dlb.model.DlbSwtStMapResponseCode </value>
+                <value>com.epic.dlb.model.DlbWbTicketFileErrorDetails </value>
+                <value>com.epic.dlb.model.DlbWbWorkflow </value>
+                <value>com.epic.dlb.model.DlbWbAuthorizedDevice </value>
+                <value>com.epic.dlb.model.DlbWbSystemUser </value>
+                <value>com.epic.dlb.model.DlbMissMatchRows </value>
+                <value>com.epic.dlb.model.DlbWbMainDrawPrizeCode </value>
+                <value>com.epic.dlb.model.DlbWbPage </value>
+                <value>com.epic.dlb.model.DlbWbWiningFile </value>
+                <value>com.epic.dlb.model.DlbWbProductProfile </value>
+                <value>com.epic.dlb.model.DlbWbSystemPriviledgeId </value>
+                <value>com.epic.dlb.model.DlbDeviceProfile </value>
+                <value>com.epic.dlb.model.DlbSwtMtPaymentMethod </value>
+                <value>com.epic.dlb.model.DlbSwtMtPaymentInstrument </value>
+                <value>com.epic.dlb.model.DlbSwtStToken </value>
+                <value>com.epic.dlb.model.DlbWbUserRoleCategory </value>
+                <value>com.epic.dlb.model.DlbWbProductListId </value>
+                <value>com.epic.dlb.model.DlbSwtMtLogLevel </value>    
+                <value>com.epic.dlb.model.DlbSwtMtBank </value>
+                <value>com.epic.dlb.model.DlbWbProduct </value>
+                <value>com.epic.dlb.model.DlbWbEmployee </value>
+                <value>com.epic.dlb.model.DlbWbTicket </value>
+                <value>com.epic.dlb.model.DlbWbProductList </value>
+                <value>com.epic.dlb.model.DlbSwtStAccountInfo </value>
+                <value>com.epic.dlb.model.DlbWbProductItem </value>
+                <value>com.epic.dlb.model.DlbStatus </value>
+                <value>com.epic.dlb.model.DlbSwtMtCardAssociationType </value>
+                <value>com.epic.dlb.model.DlbWbAudittrace </value> 
+                <value>com.epic.dlb.model.DlbSwtMtMessageTemplateCategory </value>
+                <value>com.epic.dlb.model.DlbWbSectionPriviledge </value>
+                <value>com.epic.dlb.model.DlbWbSection </value>
+                <value>com.epic.dlb.model.DlbSwtStTransactionHistoryId </value>
+                <value>com.epic.dlb.model.DlbEzCashCheck </value>
+                <value>com.epic.dlb.model.DlbWbCeftTxnHistory </value>
+                <value>com.epic.dlb.model.DlbSwtStWinningLogic </value>   
+                <value>com.epic.dlb.model.DlbWbGame</value>              
+                <value>com.epic.dlb.model.DlbWbGamePrize</value>
+                <value>com.epic.dlb.model.DlbWbGamePrizeType</value>
+                <value>com.epic.dlb.model.DlbWbGameProfile</value>
+                <value>com.epic.dlb.model.DlbWbGameResult</value>
+                <value>com.epic.dlb.model.AudittrailView</value>
+                <value>com.epic.dlb.model.DlbWbOperationRequest</value>
+                <value>com.epic.dlb.model.DLBWbPrizePaymentHistory</value>
+            </list>
+        </property>
+
+        <property name="hibernateProperties">
+            <props>
+                <prop key="show_sql">true</prop>
+                <prop key="dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+            </props>
+        </property>
+        
+
+
+    </bean>
+
+
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <tx:annotation-driven/>
+
+
+
+</beans>

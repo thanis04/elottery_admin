@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="winnerValidation" pageWidth="595" pageHeight="1584" columnWidth="521" leftMargin="54" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="bc12fe9c-b874-4b9c-91c7-8e1ca0c9a1b5">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="logo" class="java.lang.String"/>
+	<parameter name="img" class="java.io.InputStream" isForPrompting="false"/>
+	<parameter name="imgback" class="java.io.InputStream" isForPrompting="false"/>
+	<parameter name="nic" class="java.lang.String"/>
+	<parameter name="name" class="java.lang.String"/>
+	<parameter name="mobile" class="java.lang.String"/>
+	<parameter name="serialnumber" class="java.lang.String"/>
+	<parameter name="lotterynumbers" class="java.lang.String"/>
+	<parameter name="winningprize" class="java.lang.Double"/>
+	<parameter name="lottery" class="java.lang.String"/>
+	<parameter name="lottery_template" class="java.io.InputStream" isForPrompting="false"/>
+	<parameter name="profile" class="java.io.InputStream" isForPrompting="false"/>
+	<parameter name="qr_code" class="java.lang.String"/>
+	<parameter name="draw_no" class="java.lang.String"/>
+	<parameter name="draw_date" class="java.lang.String"/>
+	<parameter name="day" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="100" splitType="Stretch">
+			<staticText>
+				<reportElement x="149" y="28" width="223" height="27" uuid="2c14c01f-8b6a-43b0-81f2-ec7592241b6d"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Development Lotteries Board
+
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="92" y="7" width="337" height="19" uuid="f7e6dba3-542e-4849-b070-64d706063d36"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[E-Lottery Sales & Distribution Solution]]></text>
+			</staticText>
+			<image>
+				<reportElement x="1" y="2" width="91" height="48" uuid="5487b945-0db7-46ce-a723-7db984e3d9d3"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="122" y="54" width="277" height="26" uuid="e19d74c7-c507-484b-bd0d-daccfd06b183"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Winner money claim form (Rs. 100,000/-  upward)
+
+]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="702" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="332" width="131" height="20" uuid="9efa4030-cdbc-4e26-87fe-922facb31dfd"/>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[NIC/DL/Passport No:]]></text>
+			</staticText>
+			<image>
+				<reportElement x="4" y="532" width="202" height="133" uuid="eee46125-7280-4218-906a-eb48efd7f969"/>
+				<imageExpression><![CDATA[$P{img}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="1" y="209" width="135" height="20" uuid="33ddbe2f-09fd-4d54-994c-108d212c1c91"/>
+				<text><![CDATA[Winner 's Name (with initials) :        ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="285" width="131" height="20" uuid="a397b730-a461-468b-abb4-c91e63781252"/>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[Mobile:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="308" width="131" height="20" uuid="9f33dcc3-b5a6-47e1-8abf-818e0106bdc7"/>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[Value of Prize:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="512" width="100" height="20" uuid="d89b3063-c200-4c46-a5d1-a2b6314ccdb3"/>
+				<text><![CDATA[NIC Front]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="309" y="512" width="100" height="20" uuid="4664fdaa-7891-424e-a98d-d71ce40a51eb"/>
+				<text><![CDATA[Nic Back]]></text>
+			</staticText>
+			<image>
+				<reportElement x="304" y="532" width="199" height="133" uuid="cf630fbd-607b-4b67-b2c4-f490040c9cc2"/>
+				<imageExpression><![CDATA[$P{imgback}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="137" y="332" width="201" height="20" uuid="a2482b0e-debf-48fb-9945-0ab13543baab"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$P{nic}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="137" y="209" width="223" height="33" uuid="66af1b71-56a9-4b5a-81bd-c96f3af11cc6"/>
+				<textFieldExpression><![CDATA[$P{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="137" y="285" width="201" height="20" uuid="27cec3e3-949a-4ed3-869e-fe52b5585747"/>
+				<textElement verticalAlignment="Bottom">
+					<font isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{mobile}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="174" y="69" width="232" height="20" uuid="4d6acbf8-6c1b-4f14-adec-6f1ab47e24c9"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{lotterynumbers}]]></textFieldExpression>
+			</textField>
+			<textField pattern="LKR #,##0.00">
+				<reportElement x="136" y="308" width="202" height="20" uuid="b5b58623-5eda-4b95-b7a5-d8be9112a223"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$P{winningprize}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="241" width="131" height="20" uuid="08acf792-f41c-4794-b0b8-b3d5bae033c4"/>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[Address:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="114" y="5" width="292" height="26" uuid="d98cc187-6faa-44da-be77-3abad2bb442d"/>
+				<textElement textAlignment="Center">
+					<font size="20" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{lottery}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="412" width="24" height="13" uuid="9f340c96-c10b-48e1-b46d-04e0b35fea07"/>
+				<text><![CDATA[Date: ............................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="226" y="411" width="90" height="14" uuid="796d7daa-7838-4782-826d-5847972ae9e5"/>
+				<text><![CDATA[Signature of winner:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="226" y="473" width="90" height="13" uuid="034b6e6a-7214-47b2-9867-2db62df4b6e1"/>
+				<text><![CDATA[Signature of DLB:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="328" y="424" width="100" height="1" uuid="5ed14c7d-93b3-4bc2-82cb-48c4efcb3139"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="328" y="485" width="100" height="1" uuid="cda90e1a-c8bc-4420-968f-7a7b6a898743"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<image>
+				<reportElement x="360" y="212" width="161" height="130" uuid="c6296431-fcc9-47ae-bdf0-af9e71fa44d5"/>
+				<imageExpression><![CDATA[$P{profile}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="428" y="2" width="91" height="87" uuid="d3565f9c-7dc1-4bfa-9857-57d6deb38915"/>
+				<imageExpression><![CDATA[com.google.zxing.client.j2se.MatrixToImageWriter.toBufferedImage(
+new com.google.zxing.qrcode.QRCodeWriter().encode(
+$P{qr_code},
+com.google.zxing.BarcodeFormat.QR_CODE, 300, 300))]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="0" y="2" width="518" height="1" uuid="03c06eb8-a54b-4012-b592-2827de133374"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="1" y="171" width="517" height="1" uuid="ca0930ad-55c8-4d90-8820-b86b895dd94e"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="496" width="518" height="1" uuid="a0f4dcab-5948-456d-b337-6e442736d0d8"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="69" width="61" height="20" uuid="706a273b-a46b-4932-bf0a-7c227692fcee"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Draw No:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="96" width="61" height="20" uuid="e08e62de-b117-493b-86f0-a5dda36db7a2"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Draw Date:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="64" y="96" width="85" height="20" uuid="c2985fd3-cadb-4ce8-bd86-a0109dc3de74"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{draw_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="64" y="69" width="85" height="20" uuid="ef55ecb5-a3b3-462b-a803-ccb766fe09cc"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{draw_no}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="137" y="261" width="202" height="1" uuid="d11eb0e8-b6eb-4735-a9d2-3d8818594909"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="357" width="132" height="20" uuid="3da14664-ace2-47c7-b113-aea5f7cd683f"/>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[Date of Issue:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="137" y="377" width="100" height="1" uuid="bdc6ab49-75a7-447b-897e-f2d8783beb52"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="195" y="178" width="131" height="20" uuid="c76b524c-5d55-403d-bc23-0020ce0e8ed9"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Winner Details]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement x="160" y="96" width="225" height="82" uuid="c1218d63-6137-4a09-921c-9180d550166a"/>
+				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Code128" drawText="true" checksumRequired="false">
+					<jr:codeExpression><![CDATA[$P{serialnumber}]]></jr:codeExpression>
+				</jr:barbecue>
+			</componentElement>
+			<textField pattern="dd-MM-yyyy">
+				<reportElement x="28" y="412" width="100" height="13" uuid="80f93571-1eb7-47a1-8352-7168f54b18bb"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="132" width="225" height="20" uuid="f596af60-41db-4b06-9ccd-8b4c43e4b50b"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{serialnumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="114" y="31" width="292" height="26" uuid="8a6da629-7e00-415f-b4f7-51ea3f09d6ac"/>
+				<textElement textAlignment="Center">
+					<font size="15" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{day}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+</jasperReport>

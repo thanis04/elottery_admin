@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="winning_ticket_report" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b93d8ae9-8917-4f8e-9d70-90b267f81fcb">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="289" y="39" width="223" height="26" uuid="b910f9c0-3538-4c0f-8cbe-2c50e3ab7ffc"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Winning Ticket Report]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="252" y="13" width="289" height="26" uuid="ac03d5cd-f6ba-44d6-87f9-6c026c19a7e4"/>
+				<textElement textAlignment="Center">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[e-Lottery Sales & Distribution Solution]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="217" y="17" width="68" height="20" uuid="92f46350-424e-4fe8-838b-c71fdcd38957"/>
+				<textElement>
+					<font size="11" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Lottery Type:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="40" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="802" height="40" backcolor="#CCCCFF" uuid="e62bc39c-5ccb-4ba4-9265-322ce359b46f"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="159" y="0" width="58" height="40" uuid="da36ba96-3fb4-4ade-a9a2-5d1a08672a64"/>
+				<box>
+					<rightPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<text><![CDATA[Draw No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="308" y="0" width="100" height="40" uuid="acedc9cd-7f15-4380-851c-264a4518c6ee"/>
+				<box>
+					<rightPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<text><![CDATA[Ticket Reference No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="717" y="0" width="85" height="40" uuid="e2e48cea-001f-4fec-8367-84f6cc11d05f"/>
+				<box>
+					<rightPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<text><![CDATA[Winning Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="547" y="0" width="86" height="40" uuid="d03614ab-913e-47f7-8989-903981b71f98"/>
+				<box>
+					<rightPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<text><![CDATA[Ticket Value]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="0" width="89" height="40" uuid="ab460c41-b85b-4f3b-9f1d-1b512a0afcd3"/>
+				<box>
+					<rightPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<text><![CDATA[Lottery Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="637" y="0" width="75" height="40" uuid="75ddc2ac-1d75-4f25-932b-7c719bf9dc2c"/>
+				<box>
+					<rightPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<text><![CDATA[Currency]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="12" y="0" width="42" height="40" uuid="6aa1e0ad-3ba1-4db8-aa9a-84aa8244dafa"/>
+				<box>
+					<rightPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<text><![CDATA[No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="412" y="0" width="131" height="40" uuid="9245d675-8ebf-4a26-a820-7435450f5109"/>
+				<box>
+					<rightPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<text><![CDATA[Customer's Reference No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="223" y="0" width="82" height="40" uuid="86a1e486-8d50-4e38-9295-6c1ee8e76ce2"/>
+				<box>
+					<rightPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<text><![CDATA[Draw Date]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="33" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="1" width="802" height="32" backcolor="#EEEDED" uuid="bc9d85a2-5739-4e54-ae1a-4eeb34ea98ed"/>
+			</rectangle>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="66" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="19" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="26" splitType="Stretch"/>
+	</summary>
+</jasperReport>

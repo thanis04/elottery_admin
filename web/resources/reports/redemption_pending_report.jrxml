@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="redemption_pending_report" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ce144978-12a7-4ce2-bf6f-c53658b3206b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="239" y="41" width="343" height="26" uuid="4d2ddd68-d8d5-4d13-b21d-d85c105087fb"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Redemption Report And Pending Redemption Report]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="266" y="15" width="289" height="26" uuid="411cbd54-e321-43b6-9a24-63ade56ab924"/>
+				<textElement textAlignment="Center">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[e-Lottery Sales & Distribution Solution]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="57" splitType="Stretch">
+			<staticText>
+				<reportElement x="417" y="21" width="50" height="20" uuid="3799ed75-52a9-4368-a5c6-1f29c3968040"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[To Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="239" y="21" width="68" height="20" uuid="891b3f3d-d160-4d78-ab8f-a49244de94b0"/>
+				<textElement>
+					<font size="11" isBold="false"/>
+				</textElement>
+				<text><![CDATA[From Date:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="41" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="1" width="802" height="39" backcolor="#CCCCFF" uuid="71fbadec-fc87-4661-9024-2f861f09f5f0"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="52" y="1" width="68" height="39" uuid="a7701c6d-0266-415b-a343-a4dc8ad093ca"/>
+				<box>
+					<rightPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<text><![CDATA[Lottery Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="311" y="1" width="70" height="38" uuid="510d7842-62af-4fa3-97f2-7580a200df2c"/>
+				<box>
+					<rightPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<text><![CDATA[Customer's Reference No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="386" y="1" width="62" height="39" uuid="aeb9fa49-7317-4c0b-8bae-98b7af986e70"/>
+				<box>
+					<rightPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<text><![CDATA[Ticket Value]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="565" y="1" width="48" height="39" uuid="528fde13-ac23-491b-8064-713002a12c4c"/>
+				<box>
+					<rightPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<text><![CDATA[Winning Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="1" width="42" height="38" uuid="e497544f-d934-4b58-940c-e6a945817bdc"/>
+				<box>
+					<rightPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<text><![CDATA[No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="124" y="1" width="42" height="38" uuid="6ddf783f-1bca-4245-9af6-66d7b1919bff"/>
+				<box>
+					<rightPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<text><![CDATA[Draw No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="171" y="1" width="67" height="38" uuid="d99a1214-4308-47fd-948c-e18f35e54b1c"/>
+				<box>
+					<rightPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<text><![CDATA[Draw Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="242" y="1" width="65" height="38" uuid="243734a7-acb5-4fdd-b303-a92d02069f13"/>
+				<box>
+					<rightPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<text><![CDATA[Ticket Reference No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="452" y="1" width="52" height="38" uuid="3536bbcb-e7a8-4c98-b8b4-a53b071fa14c"/>
+				<box>
+					<rightPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<text><![CDATA[Currency]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="508" y="0" width="53" height="39" uuid="5823d251-5d47-4c52-9ac6-9edcca292a0d"/>
+				<box>
+					<rightPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<text><![CDATA[Ticket Purchase Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="618" y="2" width="82" height="37" uuid="88705191-09f6-45a7-88af-ccf7e0df01d1"/>
+				<box>
+					<rightPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<text><![CDATA[Mode of Redemption]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="706" y="0" width="96" height="39" uuid="1455041d-91ac-475b-9360-c7c65a4d9364"/>
+				<box>
+					<rightPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<text><![CDATA[Date of Redemption]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="802" height="32" backcolor="#EEEDED" uuid="40838e88-4d60-4551-b084-f19fdff6a487"/>
+			</rectangle>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="60" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

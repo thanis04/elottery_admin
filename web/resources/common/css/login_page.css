@@ -1,0 +1,132 @@
+html, body {
+    width: 100%;
+    height: 100%;    
+}
+
+body{
+    background-image: url(../images/login_bg.jpg);
+    background-size: cover;
+    padding-top: 70px; 
+}
+
+.form-submit{
+    font-family: "Open Sans", sans-serif;
+    border: none;
+    background-color: #1ab394;
+    border-radius: 5px;
+    padding: 10px 20px;
+    width: 260px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 10px 0 5px 0;
+}
+
+.form-submit:hover{
+    background-color: #18a689;
+}
+
+.form-submit:focus {
+    outline: none;
+}
+
+.panel-login{
+    background-color: #fff;
+    border-radius: 18px;
+    width: 400px;
+}
+
+.heading {
+    background-color: #25333d;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    height: 75px;
+    width: 400px;
+}
+
+.text-primary {
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 75px;
+    font-weight: bold;
+    font-family: "Open Sans", sans-serif;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0px;
+}
+
+.panel-login{
+    margin: auto;
+}
+
+.panel {
+    border: none;
+}
+
+.input-icon, .form-input {
+    background-color: black;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: left;
+    text-shadow: 0 1px 0 #ffffff;
+    background-color: #eeeeee;
+    border: 1px solid #ccc;
+}
+
+.form-input {
+    border-radius: 0 4px 4px 0;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #1ab394;
+}
+
+.input-icon {
+    border-radius: 4px 0 0 4px;
+    margin-right: -5px;
+}
+
+.input-append {
+    display: inline-block;
+    margin-bottom: 10px;
+
+}
+
+.login-error {
+    height: 20px;
+    margin: 0 0 10px 0;
+}
+
+.footer-fixed {
+    font-family: "Open Sans", sans-serif;
+    position: fixed;
+    height: 40px;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-weight: 100;
+}
+
+@media (max-width: 650px) {
+    footer {
+        display: none;
+    }
+}
+
+.logo_image{
+    margin-bottom: 30px;
+}
+
+.footer-fixed div small a {
+    text-decoration: none;
+    color: #fff !important;
+}
+
+.footer-fixed div small a:hover {
+    color: #1ab394 !important;
+}

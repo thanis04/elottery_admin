@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ticket_winning_report" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="39fd467d-e2a4-42d3-9892-4798b39c7a93">
+	<property name="ireport.zoom" value="1.0000000000000009"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="from_date" class="java.lang.String"/>
+	<parameter name="to_date" class="java.lang.String"/>
+	<parameter name="total" class="java.lang.String"/>
+	<parameter name="logo" class="java.lang.String"/>
+	<field name="productDescription" class="java.lang.String"/>
+	<field name="drawNo" class="java.lang.String"/>
+	<field name="date" class="java.lang.String"/>
+	<field name="lastUpdatedTime" class="java.lang.String"/>
+	<field name="recordCount" class="java.lang.String"/>
+	<field name="noOfTicket" class="java.lang.String"/>
+	<field name="amount" class="java.lang.String"/>
+	<variable name="no" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$V{no}+1]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="81" splitType="Stretch">
+			<staticText>
+				<reportElement x="301" y="15" width="289" height="26" uuid="068dc2e3-0833-4731-8f83-af335dfa54ba"/>
+				<textElement textAlignment="Center">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[e-Lottery Sales & Distribution Solution]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="334" y="41" width="223" height="26" uuid="4c28b298-7118-4ce5-a70f-3c17cef0016f"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ticket Winning Report]]></text>
+			</staticText>
+			<image>
+				<reportElement x="22" y="15" width="100" height="50" uuid="3bf653ac-6711-428f-86a5-37d430824eac"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement x="34" y="12" width="68" height="20" uuid="988c396a-fc7b-4c53-8fc4-587f95322d79"/>
+				<textElement>
+					<font size="11" isBold="false"/>
+				</textElement>
+				<text><![CDATA[From Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="212" y="12" width="50" height="20" uuid="6d66cf55-70ed-403c-8add-2af22251ddb9"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[To Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="377" y="12" width="81" height="20" uuid="4e35d90c-3c95-4969-a19b-6eecf097c964"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Total Tickets:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="102" y="12" width="100" height="20" uuid="b161cc37-2fe8-4f87-9f5b-e2c5cd53ac98"/>
+				<textElement textAlignment="Justified">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{from_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="262" y="12" width="100" height="20" uuid="25146d19-d08b-4de4-bcc3-f1b59825230c"/>
+				<textElement textAlignment="Justified">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{to_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="458" y="12" width="87" height="20" uuid="c0c7e858-e101-4654-aa86-403611119bf7"/>
+				<textElement textAlignment="Justified">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="802" height="22" forecolor="#000000" backcolor="#CCCCFF" uuid="3451aee7-0067-420d-9a91-37fd784c2f89"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="187" y="0" width="75" height="21" uuid="1aa4100f-1f67-4a59-8da6-269cc49e3d3a"/>
+				<box rightPadding="0">
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="0.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="0.75" lineStyle="Dotted"/>
+				</box>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Draw No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="89" y="1" width="88" height="21" uuid="67779313-c52f-4a88-ba08-ad9617f2f02a"/>
+				<box rightPadding="0">
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="0.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="0.75" lineStyle="Dotted"/>
+				</box>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lottery]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="719" y="1" width="68" height="21" uuid="125e41f8-240a-4e1d-9bff-1bce53f24401"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Winnings]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="272" y="1" width="105" height="21" uuid="6617a216-7f3e-4339-81cf-61b498c97c65"/>
+				<box rightPadding="0">
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="0.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="0.75" lineStyle="Dotted"/>
+				</box>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Draw Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="387" y="0" width="129" height="21" uuid="0d5a6926-e77a-4bbf-8a56-bc35222add92"/>
+				<box rightPadding="0">
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="0.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="0.75" lineStyle="Dotted"/>
+				</box>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Uploaded Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="526" y="1" width="72" height="21" uuid="3aa34e36-0b15-48d9-9542-c366f78f7b16"/>
+				<box rightPadding="0">
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="0.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="0.75" lineStyle="Dotted"/>
+				</box>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ticket Count]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="608" y="1" width="101" height="21" uuid="406359a2-72a3-4ded-bba2-6a3e0197b481"/>
+				<box rightPadding="0">
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="0.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="0.75" lineStyle="Dotted"/>
+				</box>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No of Winning Ticket]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="12" y="1" width="67" height="21" uuid="520d2efc-c930-44dc-a88c-79f99eca317b"/>
+				<box rightPadding="0">
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="0.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="0.75" lineStyle="Dotted"/>
+				</box>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="802" height="24" backcolor="#EEEDED" uuid="2eeaf917-b19e-4e4f-b841-30f9f1f1fb38"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="-49" y="-21" width="49" height="21" uuid="2e9f1750-843f-42a2-a7b7-45fd85054c08"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="187" y="0" width="75" height="24" uuid="9385e494-7e98-4cb2-bb25-6f6db73557a9"/>
+				<box rightPadding="0">
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="0.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="0.75" lineStyle="Dotted"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{drawNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="272" y="0" width="105" height="24" uuid="341b9fcf-fba6-4126-942c-2bbf1f8924b6"/>
+				<box rightPadding="0">
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="0.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="0.75" lineStyle="Dotted"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="387" y="0" width="129" height="24" uuid="6b6b93e6-a38d-4372-a965-7e9b12b8e2f4"/>
+				<box rightPadding="0">
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="0.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="0.75" lineStyle="Dotted"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{lastUpdatedTime}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="526" y="0" width="72" height="24" uuid="6084f17a-4661-400a-853c-84ca69641164"/>
+				<box rightPadding="0">
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="0.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="0.75" lineStyle="Dotted"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{recordCount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="608" y="0" width="101" height="24" uuid="d81b309c-5fb1-4422-9140-746aec1b7903"/>
+				<box rightPadding="0">
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="0.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="0.75" lineStyle="Dotted"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{noOfTicket}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="719" y="0" width="68" height="24" uuid="15488b44-e5bb-4e23-a4f9-b36abba7d4f9"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement x="12" y="0" width="67" height="24" uuid="3b5a6cfe-049f-427e-9c36-538210ee5efd"/>
+				<box rightPadding="0">
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="0.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="0.75" lineStyle="Dotted"/>
+				</box>
+				<textFieldExpression><![CDATA[$V{no}+1]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="89" y="0" width="88" height="24" uuid="46cfb224-62b8-4fbb-a962-2d91becbc8c6"/>
+				<box rightPadding="0">
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="0.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="0.75" lineStyle="Dotted"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{productDescription}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="47" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
