@@ -197,7 +197,7 @@ public class GameProfileController {
             boolean authStatus = (boolean) checkAuthorization.get(1);
             if (authStatus) {
                  gameProfileService.save(gameProfile);
-                    //set to response
+                //set to response
                 msg = "Game Profile" + MessageVarList.ADD_SUC;
                 status = SystemVarList.SUCCESS;
             } else {
